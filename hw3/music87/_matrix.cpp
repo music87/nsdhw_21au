@@ -12,7 +12,6 @@
 #include<pybind11/stl.h>
 
 class Matrix2D{
-    friend Matrix2D multiply_mkl(Matrix2D const & mat1, Matrix2D const & mat2);
 public:
     // constructor
     Matrix2D() : dnrow(0), dncol(0) {};
@@ -40,27 +39,22 @@ private:
     double *dbuffer = nullptr;
 };
 
-std::ostream & operator << (std::ostream & ostr, Matrix2D const & mat)
-{
-    for (size_t i=0; i<mat.nrow(); ++i) // the i-th row
-    {
+std::ostream & operator << (std::ostream & ostr, Matrix2D const & mat){
+    for (size_t i=0; i<mat.nrow(); ++i){
+	// the i-th row
         ostr << std::endl << " ";
-        for (size_t j=0; j<mat.ncol(); ++j) // the j-th column
-        {
+        for (size_t j=0; j<mat.ncol(); ++j){
+	// the j-th column
             ostr << " " << std::setw(2) << mat(i, j);
         }
     }
-
     return ostr;
 }
 
-std::ostream & operator << (std::ostream & ostr, std::vector<double> const & vec)
-{
-    for (size_t i=0; i<vec.size(); ++i)
-    {
+std::ostream & operator << (std::ostream & ostr, std::vector<double> const & vec){
+    for (size_t i=0; i<vec.size(); ++i){
         std::cout << " " << vec[i];
     }
-
     return ostr;
 }
 
@@ -124,36 +118,26 @@ Matrix2D& Matrix2D::operator=(Matrix2D && other){
 
 double& Matrix2D::operator()(size_t row, size_t col){
     // indexing operator
-    if(row*col > dnrow*dncol)
-        throw std::invalid_argument("index exceed the matrix bound");
     return dbuffer[row*dncol + col];
 }
 
 double& Matrix2D::operator()(size_t row, size_t col) const{
     // indexing operator
-    if(row*col > dnrow*dncol)
-        throw std::invalid_argument("index exceed the matrix bound");
     return dbuffer[row*dncol + col];
 }
 
-bool operator==(Matrix2D const & mat1, Matrix2D const & mat2)
-{
-    if ((mat1.ncol() != mat2.ncol()) && (mat1.nrow() != mat2.ncol()))
-    {
+bool operator==(Matrix2D const & mat1, Matrix2D const & mat2){
+    if ((mat1.ncol() != mat2.ncol()) && (mat1.nrow() != mat2.ncol())){
         return false;
     }
 
-    for (size_t i=0; i<mat1.nrow(); ++i)
-    {
-        for (size_t j=0; j<mat1.ncol(); ++j)
-        {
-            if (mat1(i, j) != mat2(i, j))
-            {
+    for (size_t i=0; i<mat1.nrow(); ++i){
+        for (size_t j=0; j<mat1.ncol(); ++j){
+            if (mat1(i, j) != mat2(i, j)){
                 return false;
             }
         }
     }
-
     return true;
 }
 
@@ -171,11 +155,11 @@ double* Matrix2D::buffer() const{
 }
 
 void Matrix2D::printself() const{
-    for (size_t i=0; i<this->nrow(); ++i) // the i-th row
-    {
+    for (size_t i=0; i<this->nrow(); ++i){
+	// the i-th row
         std::cout << std::endl << " ";
-        for (size_t j=0; j<this->ncol(); ++j) // the j-th column
-        {
+        for (size_t j=0; j<this->ncol(); ++j){
+            // the j-th column
 	    std::cout << " " << std::setw(2) << dbuffer[i*ncol()+j];
         }
     }
@@ -243,7 +227,7 @@ Matrix2D multiply_mkl(Matrix2D const &mat1, Matrix2D const &mat2){
        , mat2.buffer()
        , mat2.ncol()
        , 0.0
-       , res.dbuffer
+       , res.buffer()
        , res.ncol()
      );
     return res;

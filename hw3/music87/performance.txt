@@ -1,5 +1,3 @@
-multiply_tile takes 0.9158982848748565 seconds
-multiply_naive takes 2.786866174079478 seconds
-multiply_mkl takes 0.0302980188280344 seconds
-MKL speed-up over naive: 91.9818 x
-128 tile speed-up over naive: 3.04277 x
+Start multiply_naive (repeat=5), take min = 2.8566283737309277 seconds
+Start multiply_mkl (repeat=5), take min = 0.039654610212892294 seconds
+MKL speed-up over naive: 72.0377 x
