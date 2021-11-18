@@ -1,0 +1,85 @@
+* Uniramp 
+** Basic Information
+Uniramp is a tool for analyzing the gray values of glyphs in a given font; it also provides the image-to-Unicode conversion as a showcase.
+
+Code repository: https://github.com/Cycatz-nycu/uniramp
+
+** Problem to solve
+Ascii-art has been in its place since the 1970s. Nowadays, we still can see this kind of art on BBS (bulletin board systems), emails, etc.
+As Unicode Standard is defined to include more and more characters, it's more and more flexible for those designers to choose suitable characters to draw. (In fact, this is not ascii-art anymore, maybe it should be called "Unicode-art"?)
+
+Additionally, some methods simplifying the process of manually translating an image from pixels to bytes. One of them is the "Image to text conversion" technique. This method is to sample the image down to grayscale with less than 8-bit precision, and then assign a character for each value. For example, the most commonly-used "character ramp" for asciis is the sequence ="$@B%8&WM#*oahkbdpqwmZO0QLCJUYXzcvunxrjft/\|()1{}[]?-_+~<>i!lI;:,"^`'. "=, from black to white. 
+
+However, most of the "Image to text" conversion tools online do not support custom character sets and Unicode codepoints. They usually implement it with the standard character ramp as mentioned above since it does not require additional character and font information. It's so bad that it does not fully utilize over 100000 code points defined in Unicode.   
+
+Therefore, this project aims to generate a Unicode-version art with the given image and font file. And the user can specify their own character set, which might contain CJK or emojis characters, to indicate the generated text art must only contain these characters. Furthermore, this program also displays the character ramp with each glyph's "coverage", which is defined as ~coverage = area of the shape / (glyph advance width * units per em)~, for doing further analysis.
+ 
+** Perspective users 
++ Geeks: who want everything can be displayed in the terminal 
++ Typographers: who want to know the gray level of each glyph in their font.
++ Designers: who have strong passion in drawing these graphs   
++ Data scientists:  who want analyze the gray level of each glyph in different fonts.
+ 
+** System architecture 
+ This project can be divided into two parts, the ramp calculation and the image conversion. So I decided to create two independent sources and export a single function in both files. ~CalculateRamp.c~ will analyze the font file and extract the information such as the width, the height and the em square for each glyph and produce the corresponding character ramp. ~Image2text.c~ will accept an image and ramp information and generate the art data. In the Python binding, we first invoke ~CalculateRamp()~ to retrieve the ramp information. Next we pass the ramp into ~Image2text()~ to generate the final art file.
+ 
+** API description 
+*** The Library Part
++ =CalculateRamp(Font font, vector<uint32_t> chars) -> vector<pair<uint32_t, double>> ramp=: 
+  + Desc: Calcuate the ramp with given font and character set
+  + Return value: a sorted list containing the character and its coverage
++ =Image2text(unique_ptr<char []> image, Ramp ramp) -> unique_ptr<char []> art=
+  + Desc: Convert a image to text with the given ramp list
+  + Return value: a buffer filled with the generated art data
+
+*** The Program Part 
+Describe by explaining command-line arguments of <> provides:
++ ~-f <font>~: Specify the font file (usually you need to specify the terminal font you use)  
++ ~-c <character>~: Specify the character you want in the available character set, it can be specified multiple times.
++ ~-i <raw image>~: Specify the image you want to generate from.   
++ ~-o <art file>~: Specify the generated art text file output. If not specfied, display it on the screen. 
++ ~-r~: Specify whether the ramp statistics should be printed. 
+ 
+** Engineering infrastructure 
+
+The project directory structure:  
++ =.github/workflows=: for setting up the environment for checking and testing
+  + Setup building environment
+  + Setup =pytest= environment 
++ =assets/=: for storing static content such as screenshots
++ =build/=: for storing building temporory files  
++ =src/=: for storing source files
++ =include/=: for storing header files
++ =lib/=: for including 3rd party libs
+  + =utfcpp/=: for handling utf-8 in C++
+    + https://github.com/nemtrif/utfcpp
++ =tests/=: for storing test scripts
+  + Use =pytest= to test the program
+  + Test for the correctness of the ramp list   
++ =utils/=: for storing some utils
++ =.clang-format=: for formatting C++ code 
++ =setup.py=: for building the python package  
++ =CMakeLists.txt=: for building the C++ code with =cmake=
++ =README.org=: for documenting this project
+
+I wonder which library I should use to integrate Python with C++, ~pybind~ or ~ctypes~.
+
+** Schedule 
+
+| Week   | Description                                                               |
+|--------+---------------------------------------------------------------------------|
+| Week 1 | [CMake] Setup basic environment and 3rd libraries                         |
+| Week 2 | [C++] Research how to anaylze the glyph attributes                        |
+| Week 3 | [C++] Implement ~CalculateRamp()~ function                                |
+| Week 4 | [C++] Research how to parse the image and convert it into a grayscale one |
+| Week 5 | [C++] Implement ~Image2text()~ function                                   |
+| Week 6 | [C++ & Python] Integrate the C++ and python code and write test scripts   |
+| Week 7 | [Presentation Preparation]                                                |
+| Week 8 | [Presentation Preparation]                                                |
+
+** Reference 
++ http://paulbourke.net/dataformats/asciiart/
++ https://github.com/RameshAditya/asciify
++ https://github.com/LettError/coverage
++ https://github.com/7sDream/fontfor
++ https://simoncozens.github.io/fonts-and-layout/
