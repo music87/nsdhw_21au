@@ -27,7 +27,7 @@ Project List
 ============
 
 #. `09510 <https://github.com/09510>`__ for
-   `Encryption Acceleration <09510/README.rst>`__:
+   `Faster Decision Tree <09510/README.rst>`__:
    https://github.com/09510/Encryption-Acceleration
 #. `B106Roger <https://github.com/B106Roger>`__ for
    `Simple ML Framework <B106Roger/README.rst>`__:
@@ -54,8 +54,8 @@ Project List
 #. `YI-CHENG-SHIH645 <https://github.com/YI-CHENG-SHIH645>`__ for `Recommender
    System <YI-CHENG-SHIH645/README.rst>`__:
    https://github.com/YI-CHENG-SHIH645/RecommenderSystem
-#. `abt8601 <https://github.com/abt8601>`__ for `abt8601
-   <abt8601/README.rst>`__: missing
+#. `abt8601 <https://github.com/abt8601>`__ for `Diffusion Maps
+   <abt8601/README.rst>`__: https://github.com/abt8601/diffusion-maps
 #. `aiiuii <https://github.com/aiiuii>`__ for `Xsarms <aiiuii/README.rst>`__:
    https://github.com/aiiuii/Interbotix_Ros_Xsarms_Toolkits
 #. `anva-kn <https://github.com/anva-kn>`__ for `Ramanflow
@@ -69,9 +69,6 @@ Project List
    <eesss34690/README.rst>`__: https://github.com/eesss34690/Cache_Optimization
 #. `hsjts0u <https://github.com/hsjts0u>`__ for `TermPlot <hsjts0u>`__:
    https://github.com/hsjts0u/TermPlot
-#. `jonathan-liu-0204 <https://github.com/jonathan-liu-0204>`__ for `VRedBlack
-   <jonathan-liu-0204/0716304-Proposal.rst>`__:
-   https://github.com/jonathan-liu-0204/Visualization-of-Red-Black-Tree
 #. `music87 <https://github.com/music87>`__ for `Call Option Pricer
    <music87/proposal.md>`__:
    https://github.com/music87/nsd-project-option-pricer
@@ -79,9 +76,6 @@ Project List
    <nctu16028>`__: https://github.com/nctu16028/Exploring-Bezier-Curve
 #. `psychicalcoder <https://github.com/psychicalcoder>`__ for `PolyLower
    <psychicalcoder/README.org>`__: https://github.com/psychicalcoder/polylower
-#. `ran-ablaze <https://github.com/ran-ablaze>`__ for `Simple Polyhedral
-   Structure <ran-ablaze>`__:
-   https://github.com/ran-ablaze/Simple-Polyhedral-Structure
 #. `sam29309010 <https://github.com/sam29309010>`__ for `Backtesting
    <sam29309010/readme.md>`__: N/A
 #. `secondlevel <https://github.com/secondlevel>`__ for `Social distance
@@ -90,17 +84,19 @@ Project List
 #. `whtang906 <https://github.com/whtang906>`__ for `Selective Search
    <whtang906/README.md>`__: https://github.com/whtang906/cpp-selective-search
 #. `yichi170 <https://github.com/yichi170>`__ for `Related Work Graph
-   <yichi170/README.rst>`__: N/A
+   <yichi170/README.rst>`__: https://github.com/yichi170/RelatedWorkGraph
 
 Presentation
 ============
 
-Each presentation can use at most 25 minutes (subject to change before the
-schedule is determined). It is suggested that the presentation itself uses
-about 20 minutes. The 5 minutes are left for questions and discussions. But
-presenters may decide how to use their time. Presenters are expect to prepare
-computers for presentation. The time for setting up the computer is included in
-the allotted presentation time.
+Presenters may sign up for the time slot by opening a PR, starting from 6th
+December, 2021. The PR subject line should start with ``[presentation]``.
+
+Each presentation can use at most 18 minutes. Presenters may decide how to use
+their time. A possible arrangement is to use 15 minutes in the presentation
+itself and 3 minutes for questions and discussions. Presenters are expected to
+prepare their own computer for presentation. The time for setting up the
+computer is included in the allotted presentation time.
 
 If presenters have difficulty in preparing a computer themselves, they may seek
 help from the instructor, and resolve the issue one week before their
@@ -116,28 +112,40 @@ Time Table
     - Time
     - Presenter
     - Project
-  * - 1
-    - 07:00 - 07:25
+  * - A1
+    - 07:00 - 07:18
     - TBD
     - TBD
-  * - 2
-    - 07:30 - 07:55
+  * - A2
+    - 07:20 - 07:38
     - TBD
     - TBD
-  * - 3
-    - 08:00 - 08:25
+  * - A3
+    - 07:40 - 07:58
     - TBD
     - TBD
-  * - 4
-    - 08:30 - 08:55
+  * - A4
+    - 08:00 - 08:18
     - TBD
     - TBD
-  * - 5
-    - 09:00 - 09:25
+  * - A5
+    - 08:20 - 08:38
+    - crystal0523
+    - Fourier Transform for Image Processing
+  * - A6
+    - 08:40 - 08:58
     - TBD
     - TBD
-  * - 6
-    - 09:30 - 09:55
+  * - A7
+    - 09:00 - 09:18
+    - 李茵淇
+    - Fast_Up_FFT
+  * - A8
+    - 09:20 - 09:38
+    - TBD
+    - TBD
+  * - A9
+    - 09:40 - 09:58
     - TBD
     - TBD
 
@@ -148,30 +156,42 @@ Time Table
     - Time
     - Presenter
     - Project
-  * - 1
-    - 07:00 - 07:25
+  * - B1
+    - 07:00 - 07:18
     - TBD
     - TBD
-  * - 2
-    - 07:30 - 07:55
+  * - B2
+    - 07:20 - 07:38
     - TBD
     - TBD
-  * - 3
-    - 08:00 - 08:25
-    - TBD
-    - TBD
-  * - 4
-    - 08:30 - 08:55
-    - TBD
-    - TBD
-  * - 5
-    - 09:00 - 09:25
-    - TBD
-    - TBD
-  * - 6
-    - 09:30 - 09:55
-    - TBD
-    - TBD
+  * - B3
+    - 07:40 - 07:58
+    - Luke2336
+    - Graph visualization
+  * - B4
+    - 08:00 - 08:18
+    - BoWeii
+    - Job shop scheduling
+  * - B5
+    - 08:20 - 08:38
+    - LittleLaGi
+    - OhMyGene
+  * - B6
+    - 08:40 - 08:58
+    - 廖晊程
+    - Exploring Bezier Curve
+  * - B7
+    - 09:00 - 09:18
+    - S413
+    - All That Jazz
+  * - B8
+    - 09:20 - 09:38
+    - 蔡柏毅
+    - Diffusion Maps
+  * - B9
+    - 09:40 - 09:58
+    - 鍾弈言
+    - A-simple-virus-spread-simulation
 
 .. list-table:: 1/10 7:00-10:00
   :header-rows: 1
@@ -180,27 +200,39 @@ Time Table
     - Time
     - Presenter
     - Project
-  * - 1
-    - 07:00 - 07:25
-    - TBD
-    - TBD
-  * - 2
-    - 07:30 - 07:55
-    - TBD
-    - TBD
-  * - 3
-    - 08:00 - 08:25
-    - TBD
-    - TBD
-  * - 4
-    - 08:30 - 08:55
-    - TBD
-    - TBD
-  * - 5
-    - 09:00 - 09:25
-    - TBD
-    - TBD
-  * - 6
-    - 09:30 - 09:55
-    - TBD
-    - TBD
+  * - C1
+    - 07:00 - 07:18
+    - 楊子侑
+    - Planet Orbit Simulation - My Universe
+  * - C2
+    - 07:20 - 07:38
+    - 劉祐誠
+    - SAAF
+  * - C3
+    - 07:40 - 07:58
+    - Cycatz
+    - Uniramp
+  * - C4
+    - 08:00 - 08:18
+    - yichi170
+    - RelatedWorkGraph
+  * - C5
+    - 08:20 - 08:38
+    - 黃梓晏
+    - Faster Decision Tree
+  * - C6
+    - 08:40 - 08:58
+    - 李柏昇
+    - Automatic Differentiation
+  * - C7
+    - 09:00 - 09:18
+    - psychicalcoder
+    - PolyLower
+  * - C8
+    - 09:20 - 09:38
+    - hsjts0u
+    - TermPlot
+  * - C9
+    - 09:40 - 09:58
+    - anva-kn
+    - ramanflow

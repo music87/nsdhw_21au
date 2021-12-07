@@ -5,7 +5,7 @@ Related Work Graph
 Basic Information
 =================
 
-GitHub Repository: TBD
+GitHub Repository: https://github.com/yichi170/RelatedWorkGraph
 
 Problem to Solve
 ================
@@ -13,7 +13,10 @@ Problem to Solve
 When we are reading a paper, we would like to check the related work of it so that
 we can know some of background knowledge of the paper.
 This "Related Work Graph" is to visualize the related work of given paper, so that we can clearly 
-see that the relevance of these papers. 
+see that the relevance of these papers.
+
+I will use the force-drected algorithm (Fruchterman Reingold with a little modification) to calculate the position of the node which represents a paper.
+Also, I will seperate reference and citation into two part, so everytime user want to check the related work, they can only choose citation or reference.
 
 Perspective users
 =================
@@ -33,11 +36,9 @@ as soon as possible.
 API description
 ===============
 
-- Python: get_related_work
-- C++: construct the graph of related work
-
-I will find a faster way to construct the graph, and try to figure out how to get the related work.
-
+- Python: get_related_work from https://www.semanticscholar.org/
+- Pybind: Let Python use the function in C++
+- C++: construct the graph of related work by force-directed algorithm.
 
 Engineering infrastructure
 ==========================
@@ -46,8 +47,8 @@ Engineering infrastructure
 
 I may use the following tools to test my project. I'm not sure how to use Google test, so I will try to figure out if I need to use it to test.
 
-    - C++: Google test
-    - Python: Pytest
+- ``C++: Google test``
+- ``Python: Pytest``
 
 - Version Control
   - Git & GitHub
@@ -58,7 +59,18 @@ I may use the following tools to test my project. I'm not sure how to use Google
 
 Schedule
 ++++++++++
-TBD
+
+.. list-table::
+  :header-rows: 1
+
+  * - Date
+    - Work
+  * - 12/5 - 12/11
+    - Finish Python / C++
+  * - 12/12 - 12/19
+    - Connect Python & C++ + Test
+  * - 12/20 - 12/26
+    - Test + Prepare presentation
 
 Reference
 =========
