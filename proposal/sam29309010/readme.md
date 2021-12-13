@@ -3,7 +3,7 @@
 ## Basic Information
 In quant trading, [backtesting](https://www.investopedia.com/terms/b/backtesting.asp) is the general method to assess the viability of a given strategy. It uses historical data to simulate the trading strategy and then generates a quantitative report.
 
-Github repository: TBD
+Github repository: [Link](https://github.com/sam29309010/Backtesting-framework-for-trading-strategy)
 
 ## Problem to Solve
 Analysts use backtesting as a way to test and compare various trading techniques without risking money. The theory is that if their strategy performed poorly in the past, it is unlikely to perform well in the future (and vice versa). Hence given a strategy, a typical backtesting process will use historical data to automatically simulate a series of fake transactions, and finally return some index (e.g. net profit, market exposure, volatility) to evaluate the performance of the trading stategy.

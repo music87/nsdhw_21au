@@ -130,20 +130,20 @@ Time Table
     - TBD
   * - A5
     - 08:20 - 08:38
-    - crystal0523
-    - Fourier Transform for Image Processing
+    - TBD
+    - TBD
   * - A6
     - 08:40 - 08:58
-    - TBD
-    - TBD
+    - 呂承哲
+    - Backtesting framework for trading strategy
   * - A7
     - 09:00 - 09:18
     - 李茵淇
     - Fast_Up_FFT
   * - A8
     - 09:20 - 09:38
-    - TBD
-    - TBD
+    - secondlevel
+    - Social distance detector
   * - A9
     - 09:40 - 09:58
     - TBD
@@ -158,12 +158,12 @@ Time Table
     - Project
   * - B1
     - 07:00 - 07:18
-    - TBD
-    - TBD
+    - B106Roger
+    - Simple-ML-Framework
   * - B2
     - 07:20 - 07:38
-    - TBD
-    - TBD
+    - crystal0523
+    - Fourier Transform for Image Processing
   * - B3
     - 07:40 - 07:58
     - Luke2336
