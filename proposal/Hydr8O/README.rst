@@ -3,7 +3,7 @@ Basic information
 
 Project link:
 -------------
-https://github.com/Hydr8O/nsd-project
+https://github.com/Hydr8O/text-extractor
 
 Problem to solve
 ================
